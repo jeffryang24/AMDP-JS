@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript AMDP</title>
+
+    <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="node_modules/reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Javascript AMDP</h1>
+                <h3>IT Division - October 13rd, 2017</h3>
+                <p>
+                    <small>
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i> - jeffryangtoni24[at]gmail.com
+                    </small>
+                </p>
+            </section>
+
+            <section>
+                <h2>What is Javascript?</h2>
+                <p class="fragment">
+                    From Mocha
+                    <span class="fragment"> <i class="fa fa-arrow-right"></i> LiveScript</span>
+                    <span class="fragment"> <i class="fa fa-arrow-right"></i> JavaScript</span>
+                </p>
+            </section>
+
+            <section>
+                <h2>What about Java?</h2>
+                <p class="fragment">
+                    Are their sibling each other?
+                    <span class="fragment"><b>YES!</b></span>
+                </p>
+                <p class="fragment">
+                    But with some terms and conditions
+                </p>
+            </section>
+
+            <section>
+                <h2>Now, Let's try it!</h2>
+            </section>
+
+            <section>
+                <h2>Variable</h2>
+                <pre>
+                    <code class="hljs" data-trim contenteditable>
+var nama = 'Ana Joanna';    // with single quote
+var namalain = "Susan";    // same as above, the difference is when escaping the quote
+
+// EcmaScript 2015 Specification
+let nama = 'John Ena';
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h2>If / Else / Else If / Ternary</h2>
+                <pre>
+                    <code class="hljs" data-trim contenteditable>
+var suhu = 45;
+if (suhu <= 0 && suhu <= 20) {
+    document.write('Membeku');
+} else if (suhu > 20 && suhu <= 45) {
+    document.write('Boleh lah');
+} else {
+    document.write('Tobat nak.. Panas membunuhmu...');
+}
+
+// Ternary Operator
+var ipk = 2;
+var status = ipk > 3 && ipk <= 4 ? 'Lulus' : 'Lulus juga...';
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h2>Array and Object</h2>
+                <pre>
+                    <code class="hljs" data-trim contenteditable>
+// Initialize Array
+var arr1 = new Array();
+var arr2 = [];  // recommended way
+var arr3 = new Array('alpha', 'beta', 'charlie');
+var arr4 = ['delta', 'echo', 'foxtrot'];
+
+// Indexed Array
+document.write(arr3[0]);    // start from index 0
+
+// Associative Array
+var arr5 = { nama: 'Tango Oreo', kelas: 'VII' };
+document.write(arr5['nama']);
+document.write(arr5.nama);
+
+// Complex Nested Array
+var arr6 = {
+    nama: "John Titor",
+    sekolah: [{
+        nama: 'SMP Teo',
+        avg: 89
+    }, {
+        nama: 'SMA Teo',
+        avg: 90
+    }],
+    nickname: ['Bocah', 'Entong', 'Joe']
+};
+
+document.write(arr6.sekolah[0].nama);
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h2>Loop Condition</h2>
+                <pre>
+                    <code class="hljs" data-trim contenteditable>
+// For Loop
+for(let i = 0; i < 100; i++) {
+    document.write(i);
+}
+
+// Do While Loop
+var a = 0;
+do {
+    document.write(new Date().toUTCString());
+    a++;
+}while(a < 10)
+
+// While Do Loop
+a = 10
+while(a > 0) {
+    document.write('test');
+    a--;
+}
+
+// Accessing array using Loop
+var arr1 = ['Saya', 'Suka', 'Main', 'Catur'];
+for(let i = 0; i < arr1.length; i++) {
+    document.write(arr1[i]);
+}
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h2>Function</h2>
+                <pre>
+                    <code class="hljs" data-trim contenteditable>
+function tambah(int1, int2) {
+    return int1 + int2;
+}
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h2>Event and Event Handler</h2>
+                <pre>
+                    <code class="hljs" data-trim contenteditable>
+// Event Handler
+document.addEventListener('click', function() {
+    alert('Welcome to the jungle!');
+});
+
+// Event
+<a href="#" onclick="alert('No No No!!');"></a>
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h2>DOM</h2>
+                <pre>
+                    <code class="hljs" data-trim contenteditable>
+var txtNama = document.getElementById('txtNama');
+
+// For validation,
+// You can use the combination of DOM, IF Condition, Loop, or Function
+                    </code>
+                </pre>
+            </section>
+
+            <section data-background="https://media.giphy.com/media/3ohuAxZ0WN0CBhKtkQ/giphy.gif">
+                <h2>Well Done... Any Question...?</h2>
+            </section>
+
+            <section data-background="https://media.giphy.com/media/l0HlDOrSQNRIoRo6k/giphy.gif">
+                <h2>Thank you for you all... See you next...</h2>
+                <p>
+                    <small>
+                        Created using <a href="http://lab.hakim.se/reveal-js/">reveal.js HTML Presentation Framework</a>
+                    </small>
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+    <script src="node_modules/reveal.js/js/reveal.js"></script>
+
+    <script>
+
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+                { src: 'node_modules/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'node_modules/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'node_modules/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'node_modules/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'node_modules/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: 'node_modules/reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+
+    </script>
+</body>
+</html>

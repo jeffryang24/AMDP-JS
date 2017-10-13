@@ -1,0 +1,12 @@
+{
+  "name": "amdpjs",
+  "version": "1.0.0",
+  "description": "Javascript Training for AM",
+  "main": "index.js",
+  "author": "Jeffry Angtoni <jeffryangtoni24@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "font-awesome": "^4.7.0",
+    "reveal.js": "^3.5.0"
+  }
+}
