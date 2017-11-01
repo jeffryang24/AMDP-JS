@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <div id="data">
+    
+  </div>
+  <button type="button" id="button" onclick="callMe()">Test</button>
+  <script>
+    var ajax;
+    function callMe() {
+      ajax = new XMLHttpRequest();
+    
+      ajax.onreadystatechange = dosth;
+      
+      ajax.open('GET', './index.html');
+      ajax.send();
+    }
+    
+    
+    function dosth() {
+      try{
+        console.log('state: ' + ajax.readyState);
+        console.log('status: ' + ajax.status)
+        if (ajax.readyState == 4 && ajax.status == 200) {
+          let el = document.getElementById('data');
+          console.log(ajax.responseText);
+          el.innerHTML = ajax.responseText;
+        }
+      }catch(e){
+        console.log(e);
+      }
+    }
+  </script>
+</body>
+</html>

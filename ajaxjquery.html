@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript AMDP</title>
+
+    <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="node_modules/reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Introduction to</h1>
+                <div style="display: inline-block;">
+                    <img src="./images/ajax.png" style="width: 130px; height: auto; border: none !important;"><h1>and</h1>
+                    <img src="./images/jquery_logo.png" style="width: 250px; height: auto; border: none !important;">
+                </div>
+                <h4>IT Division - November 1st, 2017</h4>
+                <p>
+                    <small>
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i> - jeffryangtoni24[at]gmail.com
+                    </small>
+                </p>
+            </section>
+
+            <section>
+                <h2>What is <b>AJAX</b>?</h2>
+                <p class="fragment" style="text-align: left;"><b>A</b><span class="fragment"> : Asynchronous</span></p>
+                <p class="fragment" style="text-align: left;"><b>J</b><span class="fragment"> : Javascript</span></p>
+                <p class="fragment" style="text-align: left;"><b>A</b><span class="fragment"> : And</span></p>
+                <p class="fragment" style="text-align: left;"><b>X</b>
+                    <span class="fragment"> : XML?? 
+                        <span class="fragment">
+                            WT*!
+                        </span>
+                    </span>
+                </p>
+                <p class="fragment">
+                    <img src="./images/wtf.jpg" style="width: 260px; height: auto; border: none !important;">
+                </p>
+            </section>
+
+            <section>
+                <h2>Let's try it! (Pure Javascript)</h2>
+                <pre>
+                    <code class="hljs" data-trim contenteditable>
+var ajax = new XMLHttpRequest();
+
+if (!ajax) {
+    alert('Can not make XMLHttpRequest object!);
+    return false;
+}
+
+ajax.onreadystatechange = dosth;
+
+function dosth() {
+    if (ajax.readyState == 4 && ajax.status == 200) {
+        console.log(ajax.responseText);
+    }
+}
+
+// method name must be capital or the browser will not process it...
+ajax.open("GET", "http://www.google.com", true);
+ajax.send();
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <img src="./images/open.PNG">
+            </section>
+
+            <section>
+                <img src="./images/readystate.PNG">
+            </section>
+
+            <section>
+                Ok, Let's try it!
+            </section>
+
+            <section>
+                <h1>Fun Logic Time!</h1>
+                <p>What is the typeof NaN?</p>
+                <pre>
+                    <code class="hljs" data-trim contenteditable>
+typeof NaN === ?
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h1>Fun Logic Time!</h1>
+                <p>What is the the result from 'b' + 'a' + + 'a' + 'a'</p>
+                <pre>
+                    <code class="hljs" data-trim contenteditable>
+'b' + 'a' + + 'a' + 'a'
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h2>What about jQuery?</h2>
+                <ul>
+                    <li class="fragment">It just a helper library.</li>
+                    <li class="fragment">Initialized with '$' sign or jQuery.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Now, Let's try it!</h2>
+            </section>
+
+            <section data-background="https://media.giphy.com/media/3ohuAxZ0WN0CBhKtkQ/giphy.gif">
+                <h2>Well Done... Any Question...?</h2>
+            </section>
+
+            <section data-background="https://media.giphy.com/media/l0HlDOrSQNRIoRo6k/giphy.gif">
+                <h2>Thank you for you all... See you next time...</h2>
+                <p>
+                    <small>
+                        Created using <a href="http://lab.hakim.se/reveal-js/">reveal.js HTML Presentation Framework</a>
+                    </small>
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+    <script src="node_modules/reveal.js/js/reveal.js"></script>
+
+    <script>
+
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+                { src: 'node_modules/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'node_modules/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'node_modules/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'node_modules/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'node_modules/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: 'node_modules/reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+
+    </script>
+</body>
+</html>
